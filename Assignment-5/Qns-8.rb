@@ -1,16 +1,11 @@
-module StringOps
-  class ReplacerRegex
-    def self.replace_regex(str, regex, replacement)
-      regex = regex.gsub(/^\/|\/$/, '')
-      str.gsub(Regexp.new(regex), replacement)
-    end
-  end
-end
 
-print "Enter the main string:"
-str = gets.chomp
-print "Enter the regex pattern to replace:"
-regex = gets.chomp
-print "Enter the replacement string:"
-replacement = gets.chomp
-puts StringOps::ReplacerRegex.replace_regex(str.to_s, regex.to_s, replacement.to_s)
+print "Enter the Sentence of word:"
+sen=gets.chomp
+print "Enter the pattern to replace:"
+pat=gets.chomp
+print "Enter the word to replace:"
+rpl=gets.chomp
+
+
+puts "After the replacement the text will be:"
+puts sen.gsub(/#{pat}/,rpl)

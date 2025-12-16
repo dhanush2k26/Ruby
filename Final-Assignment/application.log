@@ -1,0 +1,21 @@
+INFO: Server startup completed successfully 
+DEBUG: Initializing modules 
+ERROR: Failed to load module 'payment-processor' 
+WARNING: High memory usage detected (89%) 
+INFO: User 'alice' authenticated 
+ERROR: Database query timeout 
+CRITICAL: Out of memory - killing process 4521 
+FAILURE: Backup job failed 
+INFO: Cache warmed successfully 
+DEBUG: Processing request 0x7f3a1b 
+ERROR: API call to payment gateway failed 
+WARNING: Slow response from external service 
+INFO: Session created for user 'bob' 
+ERROR: File not found: /uploads/report.pdf 
+CRITICAL: Disk corruption detected on /dev/sdb1 
+FAILURE: Email delivery failed 
+INFO: Daily maintenance completed 
+DEBUG: Cleaning temporary files 
+ERROR: Invalid configuration at line 42 
+WARNING: SSL certificate expires soon 
+INFO: Server shutting down gracefully

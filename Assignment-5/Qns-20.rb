@@ -7,8 +7,6 @@ module University
       @age = age
       @address = address
     end
-
-    # setInfo variant can accept 2 or 3 parameters
     def setInfo(name, age, address = nil)
       @name = name
       @age = age
