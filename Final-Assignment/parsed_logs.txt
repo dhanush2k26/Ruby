@@ -1,0 +1,35 @@
+--- Log Entry #1 ---
+Ip address: 192.168.1.1
+Timestamp: 10/Oct/2000:13:55:36 -0700
+Http method: GET
+Path: /index.html
+Status code: 200
+
+--- Log Entry #2 ---
+Ip address: 10.0.0.5
+Timestamp: 10/Oct/2000:14:00:01 -0700
+Http method: POST
+Path: /api/login
+Status code: 201
+
+--- Log Entry #3 ---
+Ip address: 172.16.254.1
+Timestamp: 11/Oct/2000:09:15:45 -0700
+Http method: PUT
+Path: /api/users/123
+Status code: 204
+
+--- Log Entry #4 ---
+ Raw: '203.0.113.195 - - [11/Oct/2000:12:30:22 -0700] "DELETE /api/posts/456 HTTP/1.1" 404' 
+Error: Could not parse completely
+
+--- Log Entry #5 ---
+ Raw: 'Invalid log entry that wont parse correctly' 
+Error: Could not parse completely
+
+--- Log Entry #6 ---
+ Raw: '198.51.100.33 - mary [12/Oct/2000:15:45:10 -0700] "GET /dashboard HTTP/1.0" 500' 
+Error: Could not parse completely
+
+Total logs parsed: 3
+Total logs with errors: 3
