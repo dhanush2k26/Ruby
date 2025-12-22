@@ -1,6 +1,17 @@
 module CurrencyFormatter
-    def format_currency(amount)
-     "$#{'%.2f' % amount}"
+    def format_currency(c_format,amount)
+        case c_format.upcase
+            when "INR"
+            "₹%.2f" % amount
+            when "USD"
+            "$%.2f" % amount
+            when "EUR"
+            "€%.2f" % amount
+            when "GBP"
+            "£%.2f" % amount
+            else
+            "$.2f" % amount
+        end
     end
 end
 
@@ -46,6 +57,7 @@ end
 
 puts "----Welcome to Bill Counter----"
 invoices=[]
+c_format=""
 loop do
     puts "1. Create New Invoice"
     puts "2. View All Invoices"
@@ -71,6 +83,8 @@ loop do
             quantity=gets.chomp.to_i
             print " price: "
             price=gets.chomp.to_i
+            print "Enter the transaction  currency format like (INR,USD,EUR,GBP) and default USD: "
+            c_format=gets.chomp
             inx.add_item(name,quantity,price)
             puts "Add another item? (y/n):"
             c=gets.chomp
@@ -82,7 +96,7 @@ loop do
             puts "====All Invoices===="
             invoices.each_with_index  do |data,index|
              total_amount=data.items.reduce(0) {|sum,item| sum+(item[:quantity]*item[:price])}
-             puts "#{index+1} #Invoice-#{data.customer_name}-#{data.format_currency(total_amount)}"
+             puts "#{index+1} #Invoice-#{data.customer_name}-#{data.format_currency(c_format,total_amount)}"
             end
              
      when 3
@@ -90,7 +104,7 @@ loop do
         puts "\n--- ALL INVOICES ---"
         invoices.each_with_index do |inv, index|
             total_amount = inv.items.reduce(0) { |sum, item| sum + (item[:quantity] * item[:price]) }
-            puts "#{index + 1}. Invoice ##{inv.id} - #{inv.customer_name} - #{inv.format_currency(total_amount)}"
+            puts "#{index + 1}. Invoice ##{inv.id} - #{inv.customer_name} - #{inv.format_currency(c_format,total_amount)}"
         end
         print "\nEnter invoice number to print total: "
         inv_number = gets.chomp.to_i
