@@ -164,7 +164,7 @@ class InventoryManager
         puts "Invalid discount range"
         return
     end
-      end
+  end
    
     @products.each do |product|
       if product.category==category
@@ -273,7 +273,7 @@ def create_electronic_product
   return electronic
 end
 
-def craete_clothing_product
+def create_clothing_product
   name = get_product_name
   price = get_product_price
   print "Enter size: "
@@ -353,7 +353,7 @@ def main_menu
       electronic = create_electronic_product
       IM.add_product(electronic)
     when 2
-      clothing = craete_clothing_product
+      clothing = create_clothing_product
       IM.add_product(clothing)
     when 3
       book = create_book_product
