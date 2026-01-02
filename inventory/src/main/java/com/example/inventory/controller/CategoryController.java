@@ -17,7 +17,7 @@ public class CategoryController {
 
     @Autowired
     private CategoryRepo repo;
-    @Autowired
+    
     @GetMapping("/categories")
     public ResponseEntity<List<Category>>  getCategories() {
         List<Category> listCategory=repo.findAll();
@@ -29,6 +29,5 @@ public class CategoryController {
         Category savedCategory=repo.save(category);
         return ResponseEntity.ok(savedCategory);
     }
-    
     
 }
